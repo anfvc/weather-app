@@ -49,7 +49,7 @@ function App() {
           />
           <button>Search</button>
         </form>
-        <Cities cities={cities} />
+        <Cities cities={cities} setCities={setCities}/>
       </div>
     </>
   );

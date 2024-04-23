@@ -18,6 +18,23 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.city-container {
+  width: 30%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.city-container {
+  border: 1px solid white;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
