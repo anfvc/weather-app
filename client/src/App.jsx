@@ -53,7 +53,7 @@ function App() {
             value={input}
             onChange={handleChange}
           />
-          <button>Search</button>
+          <button className="search">Search</button>
         </form>
         {error ? <p className="error">Please enter a valid city</p> : ""}
         <Cities cities={cities} setCities={setCities} />
