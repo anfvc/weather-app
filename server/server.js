@@ -12,8 +12,10 @@ app.get("/", (req, res) => {
 
 app.use("/weather", weatherRouter) //This is the weather router
 
+const port = process.env.PORT || 3003;
 
-app.listen(process.env.PORT, () => {
+
+app.listen(port, () => {
   console.log(`Server is listening to port ${process.env.PORT}`);
 })
 
