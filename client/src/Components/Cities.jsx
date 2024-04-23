@@ -20,7 +20,7 @@ function Cities({ cities, setCities }) {
             <h4>Current Temperature: {city.main.temp.toFixed(0)} °C</h4>
             <p>Feels like: {city.main.feels_like.toFixed(0)}°C</p>
             <p>In {city.name}, expect a Max of {city.main.temp_max.toFixed(0)} °C and a Min of {city.main.temp_min.toFixed(0)} °C today.</p>
-            <button onClick={() => handleDelete(city.id)}>Delete</button>
+            <button className="delete" onClick={() => handleDelete(city.id)}>x</button>
           </div>
         ))
       )}

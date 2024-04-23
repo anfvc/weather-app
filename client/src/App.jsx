@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [input, setInput] = useState("");
   const [cities, setCities] = useState([]); //Created this state array to store all the fetched cities from the input :)
+  const [error, setError] = useState(false);
 
   async function getWeather() {
     try {
@@ -31,13 +32,18 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    getWeather();
-    setInput("");
+    if (!input) {
+      setError(true);
+    } else {
+      getWeather();
+      setError(false);
+      setInput("");
+    }
   }
 
   return (
     <>
-      <div>
+      <div className="parent-container">
         <h1>Weather APP</h1>
         <h3>To start, please type a city of your preference</h3>
         <form onSubmit={handleSubmit}>
@@ -49,7 +55,8 @@ function App() {
           />
           <button>Search</button>
         </form>
-        <Cities cities={cities} setCities={setCities}/>
+        {error ? <p className="error">Please enter a valid city</p> : ""}
+        <Cities cities={cities} setCities={setCities} />
       </div>
     </>
   );
